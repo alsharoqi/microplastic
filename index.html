@@ -1,0 +1,2114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polyethylene-Degrading Bacteria — Qatar Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --maroon: #8a1538;
+        --maroon-light: #b01d47;
+        --maroon-deep: #5a0d24;
+        --sand: #f5ede0;
+        --sand-mid: #e8d8c3;
+        --ocean: #3d7a8a;
+        --ocean-light: #6fb3c4;
+        --white: #fdfaf7;
+        --text: #1a1410;
+        --text-mid: #4a3f35;
+        --text-light: #8a7a6e;
+        --glass: rgba(253, 250, 247, 0.7);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--white);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* ─── NAV ─────────────────────────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 3rem;
+        backdrop-filter: blur(14px) saturate(180%);
+        background: rgba(253, 250, 247, 0.82);
+        border-bottom: 1px solid rgba(138, 21, 56, 0.1);
+        transition: all 0.3s;
+      }
+      .nav-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--maroon);
+      }
+      .nav-logo span {
+        font-style: italic;
+        font-weight: 300;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--maroon);
+      }
+      .nav-cta {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: var(--maroon);
+        color: var(--white);
+        padding: 0.6rem 1.4rem;
+        border-radius: 2px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--maroon-deep);
+      }
+
+      /* ─── HERO ─────────────────────────────────────────────── */
+      #hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(
+          160deg,
+          #f5ede0 0%,
+          #e8f4f8 50%,
+          #f0e6d3 100%
+        );
+      }
+      .hero-bg-image {
+        position: absolute;
+        inset: 0;
+        background-image: url("https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/Slide%201%20-%20Students%20Beach%2016x9.png?csf=1&web=1&e=u6guMV");
+        background-size: cover;
+        background-position: center top;
+        opacity: 0.18;
+        transform: scale(1.05);
+        transition: transform 20s ease;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 237, 224, 0.92) 0%,
+          rgba(245, 237, 224, 0.75) 40%,
+          rgba(61, 122, 138, 0.12) 100%
+        );
+      }
+      canvas#particles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 3rem;
+        margin-top: 5rem;
+        text-align: center;
+        animation: fadeUp 1.2s ease both;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--maroon);
+        margin-bottom: 2rem;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: var(--maroon);
+      }
+      .hero-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.08;
+        color: var(--text);
+        margin-bottom: 1.8rem;
+      }
+      .hero-title em {
+        font-style: italic;
+        color: var(--maroon);
+      }
+      .hero-subtitle {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-mid);
+        max-width: 560px;
+        margin: 0 auto 2.5rem;
+        font-weight: 300;
+      }
+      .hero-badges {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+      .badge {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.45rem 1rem;
+        border-radius: 100px;
+      }
+      .badge-maroon {
+        background: var(--maroon);
+        color: var(--white);
+      }
+      .badge-outline {
+        border: 1.5px solid var(--maroon);
+        color: var(--maroon);
+        background: transparent;
+      }
+      .badge-ocean {
+        background: var(--ocean);
+        color: var(--white);
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        background: var(--maroon);
+        color: var(--white);
+        padding: 1rem 2.2rem;
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 2px;
+        transition: all 0.25s;
+      }
+      .hero-cta::after {
+        content: "↓";
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+      .hero-cta:hover {
+        background: var(--maroon-deep);
+      }
+      .hero-cta:hover::after {
+        transform: translateY(3px);
+      }
+
+      .hero-scroll-line {
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-light);
+      }
+      .scroll-anim {
+        width: 1px;
+        height: 60px;
+        background: var(--text-light);
+        position: relative;
+        overflow: hidden;
+      }
+      .scroll-anim::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 1px;
+        height: 60px;
+        background: var(--maroon);
+        animation: scrollLine 1.8s ease-in-out infinite;
+      }
+
+      /* ─── SECTION BASE ─────────────────────────────────────── */
+      section {
+        position: relative;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+      .section-label {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--maroon);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+      .section-label::before {
+        content: "";
+        width: 24px;
+        height: 1.5px;
+        background: var(--maroon);
+      }
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        font-weight: 300;
+        line-height: 1.12;
+        color: var(--text);
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--maroon);
+      }
+
+      /* ─── PROBLEM SECTION ──────────────────────────────────── */
+      #problem {
+        padding: 8rem 0;
+        background: var(--text);
+        color: var(--white);
+        overflow: hidden;
+      }
+      .problem-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url("https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(1).jpeg?csf=1&web=1&e=8at3Zg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.12;
+      }
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .problem-left .section-label {
+        color: var(--ocean-light);
+      }
+      .problem-left .section-label::before {
+        background: var(--ocean-light);
+      }
+      .problem-left .section-title {
+        color: var(--white);
+      }
+      .problem-left .section-title em {
+        color: var(--ocean-light);
+      }
+      .problem-desc {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: rgba(253, 250, 247, 0.72);
+        margin-top: 1.5rem;
+        font-weight: 300;
+      }
+      .stat-big {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 8vw, 7rem);
+        font-weight: 300;
+        line-height: 1;
+        color: var(--maroon-light);
+        margin: 2rem 0 0.5rem;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: rgba(253, 250, 247, 0.6);
+        letter-spacing: 0.05em;
+      }
+      .problem-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .prob-card {
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(253, 250, 247, 0.12);
+        border-radius: 4px;
+        background: rgba(253, 250, 247, 0.04);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .prob-card:hover {
+        border-color: rgba(176, 29, 71, 0.5);
+        background: rgba(138, 21, 56, 0.08);
+      }
+      .prob-card-num {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        color: var(--maroon-light);
+        margin-bottom: 1rem;
+      }
+      .prob-card h4 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 0.6rem;
+      }
+      .prob-card p {
+        font-size: 0.82rem;
+        line-height: 1.65;
+        color: rgba(253, 250, 247, 0.55);
+      }
+
+      /* ─── STORY SECTION ────────────────────────────────────── */
+      #story {
+        padding: 8rem 0;
+        background: var(--white);
+      }
+      .story-intro {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 6rem;
+      }
+      .story-intro p {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+
+      .story-step {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+        margin-bottom: 7rem;
+      }
+      .story-step.reverse {
+        direction: rtl;
+      }
+      .story-step.reverse > * {
+        direction: ltr;
+      }
+      .story-step-img {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .story-step-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .story-step-img:hover img {
+        transform: scale(1.04);
+      }
+      .story-step-img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: linear-gradient(
+          to top,
+          rgba(26, 20, 16, 0.8) 0%,
+          transparent 100%
+        );
+      }
+      .story-step-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--white);
+        opacity: 0.8;
+      }
+      .story-step-text {
+        padding: 2rem 0;
+      }
+      .step-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5rem;
+        font-weight: 300;
+        color: var(--sand-mid);
+        line-height: 1;
+        margin-bottom: -1rem;
+      }
+      .story-step-text h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+      }
+      .story-step-text h3 em {
+        font-style: italic;
+        color: var(--maroon);
+      }
+      .story-step-text p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+      .story-step-meta {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.8rem;
+        flex-wrap: wrap;
+      }
+      .meta-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--maroon);
+        padding: 0.4rem 0.9rem;
+        border: 1px solid rgba(138, 21, 56, 0.3);
+        border-radius: 2px;
+      }
+
+      /* ─── GALLERY ──────────────────────────────────────────── */
+      #gallery {
+        padding: 8rem 0;
+        background: var(--sand);
+      }
+      .gallery-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .gallery-header p {
+        margin-top: 1.2rem;
+        font-size: 0.95rem;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+      }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        background: var(--text);
+      }
+      .gallery-item.large {
+        grid-column: span 2;
+      }
+      .gallery-item.tall {
+        grid-row: span 2;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 240px;
+        transition:
+          transform 0.5s ease,
+          opacity 0.3s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.06);
+        opacity: 0.85;
+      }
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.2rem 1rem 1rem;
+        background: linear-gradient(
+          to top,
+          rgba(26, 20, 16, 0.75) 0%,
+          transparent 100%
+        );
+        transform: translateY(100%);
+        transition: transform 0.35s ease;
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--white);
+      }
+      .gallery-item:hover .gallery-caption {
+        transform: translateY(0);
+      }
+
+      /* ─── LIGHTBOX ─────────────────────────────────────────── */
+      #lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: rgba(26, 20, 16, 0.96);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      #lightbox.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+      #lightbox-close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--white);
+        cursor: pointer;
+        letter-spacing: 0.1em;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+      #lightbox-close:hover {
+        opacity: 1;
+      }
+
+      /* ─── VISION 2030 ──────────────────────────────────────── */
+      #vision {
+        padding: 8rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--maroon-deep) 0%,
+          #2d0a19 50%,
+          #0d1f2d 100%
+        );
+        color: var(--white);
+      }
+      .vision-header {
+        max-width: 680px;
+        margin-bottom: 5rem;
+      }
+      .vision-header .section-label {
+        color: var(--ocean-light);
+      }
+      .vision-header .section-label::before {
+        background: var(--ocean-light);
+      }
+      .vision-header .section-title {
+        color: var(--white);
+      }
+      .vision-header .section-title em {
+        color: var(--ocean-light);
+      }
+      .vision-header p {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: rgba(253, 250, 247, 0.65);
+        font-weight: 300;
+      }
+      .vision-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .vision-card {
+        padding: 2.5rem 2rem;
+        border: 1px solid rgba(253, 250, 247, 0.1);
+        border-radius: 4px;
+        background: rgba(253, 250, 247, 0.04);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .vision-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--maroon-light), var(--ocean));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+      .vision-card:hover::before {
+        transform: scaleX(1);
+      }
+      .vision-card:hover {
+        border-color: rgba(176, 29, 71, 0.3);
+        background: rgba(138, 21, 56, 0.08);
+      }
+      .vision-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        border: 1px solid rgba(253, 250, 247, 0.15);
+        border-radius: 4px;
+        color: var(--ocean-light);
+      }
+      .vision-card h4 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        color: var(--white);
+      }
+      .vision-card p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: rgba(253, 250, 247, 0.55);
+      }
+
+      .vision-quote {
+        margin-top: 5rem;
+        padding: 3rem 3.5rem;
+        border-left: 3px solid var(--maroon-light);
+        background: rgba(253, 250, 247, 0.03);
+        border-radius: 0 4px 4px 0;
+      }
+      .vision-quote blockquote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(253, 250, 247, 0.9);
+        line-height: 1.5;
+      }
+      .vision-quote cite {
+        display: block;
+        margin-top: 1rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ocean-light);
+        font-style: normal;
+      }
+
+      .vision-image {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 5rem;
+        aspect-ratio: 16/7;
+        border: 1px solid rgba(253, 250, 247, 0.1);
+        cursor: pointer;
+      }
+      .vision-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+      .vision-image:hover img {
+        transform: scale(1.03);
+      }
+      .vision-image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        background: linear-gradient(
+          to top,
+          rgba(13, 31, 45, 0.9) 0%,
+          transparent 100%
+        );
+      }
+      .vision-image-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ocean-light);
+      }
+
+      /* ─── RESULTS ──────────────────────────────────────────── */
+      #results {
+        padding: 8rem 0;
+        background: var(--white);
+      }
+      .results-header {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 5rem;
+      }
+      .results-header p {
+        margin-top: 1.2rem;
+        font-size: 0.95rem;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+      .results-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+      }
+      .result-stat {
+        text-align: center;
+        padding: 2.5rem 1rem;
+        border: 1px solid var(--sand-mid);
+        border-radius: 4px;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+      .result-stat:hover {
+        border-color: rgba(138, 21, 56, 0.3);
+        box-shadow: 0 4px 20px rgba(138, 21, 56, 0.07);
+      }
+      .stat-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: var(--maroon);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .stat-desc {
+        font-size: 0.8rem;
+        color: var(--text-mid);
+        letter-spacing: 0.04em;
+      }
+
+      .findings-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+      .finding {
+        padding: 2.5rem;
+        background: var(--sand);
+        border-radius: 4px;
+        border-left: 3px solid var(--maroon);
+      }
+      .finding h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+      .finding p {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+      .finding ul {
+        margin-top: 1rem;
+        list-style: none;
+      }
+      .finding ul li {
+        font-size: 0.85rem;
+        line-height: 1.75;
+        color: var(--text-mid);
+        font-weight: 300;
+        padding-left: 1.2rem;
+        position: relative;
+      }
+      .finding ul li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--maroon);
+        font-size: 0.7rem;
+      }
+
+      /* ─── TEAM ─────────────────────────────────────────────── */
+      #team {
+        padding: 8rem 0;
+        background: var(--sand);
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .team-image {
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .team-image img {
+        width: 100%;
+        display: block;
+      }
+      .team-content .section-label {
+        margin-bottom: 1.2rem;
+      }
+      .team-content .section-title {
+        margin-bottom: 1.5rem;
+      }
+      .team-content p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+        font-weight: 300;
+        margin-bottom: 1.2rem;
+      }
+      .team-names {
+        margin-top: 2rem;
+        padding: 1.8rem;
+        background: var(--white);
+        border-radius: 4px;
+        border: 1px solid var(--sand-mid);
+      }
+      .team-role {
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--maroon);
+        margin-bottom: 0.6rem;
+      }
+      .team-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--text);
+      }
+      .team-divider {
+        height: 1px;
+        background: var(--sand-mid);
+        margin: 1.2rem 0;
+      }
+
+      /* ─── METHODOLOGY ──────────────────────────────────────── */
+      #methodology {
+        padding: 8rem 0;
+        background: var(--white);
+      }
+      .method-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+      }
+      .method-step {
+        padding: 2rem 1.5rem;
+        border: 1px solid var(--sand-mid);
+        border-radius: 4px;
+        transition: all 0.3s;
+      }
+      .method-step:hover {
+        border-color: rgba(138, 21, 56, 0.3);
+        box-shadow: 0 4px 20px rgba(138, 21, 56, 0.06);
+        transform: translateY(-2px);
+      }
+      .method-step-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        font-weight: 300;
+        color: var(--sand-mid);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .method-step h4 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text);
+        margin-bottom: 0.8rem;
+      }
+      .method-step p {
+        font-size: 0.82rem;
+        line-height: 1.7;
+        color: var(--text-mid);
+        font-weight: 300;
+      }
+
+      /* ─── FUTURE SECTION ───────────────────────────────────── */
+      #future {
+        padding: 10rem 0;
+        background: linear-gradient(
+          170deg,
+          #f0f7f9 0%,
+          var(--sand) 60%,
+          #f5ede0 100%
+        );
+        text-align: center;
+      }
+      .future-content {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .future-content .section-label {
+        justify-content: center;
+      }
+      .future-content .section-title {
+        margin-bottom: 2rem;
+      }
+      .future-content .section-title em {
+        color: var(--ocean);
+      }
+      .future-content p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text-mid);
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+      .future-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        border: 2px solid var(--maroon);
+        color: var(--maroon);
+        padding: 0.9rem 2rem;
+        text-decoration: none;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 2px;
+        transition: all 0.25s;
+      }
+      .future-cta:hover {
+        background: var(--maroon);
+        color: var(--white);
+      }
+
+      /* ─── REFERENCES ───────────────────────────────────────── */
+      #references {
+        padding: 5rem 0;
+        background: var(--text);
+      }
+      .ref-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      .ref-item {
+        padding: 1.2rem 1.5rem;
+        border: 1px solid rgba(253, 250, 247, 0.08);
+        border-radius: 2px;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .ref-num {
+        font-family: "Space Mono", monospace;
+        font-size: 0.6rem;
+        color: var(--maroon-light);
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+      }
+      .ref-link {
+        font-size: 0.78rem;
+        color: rgba(253, 250, 247, 0.55);
+        word-break: break-all;
+        line-height: 1.6;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .ref-link:hover {
+        color: var(--ocean-light);
+      }
+      .references-label {
+        color: rgba(253, 250, 247, 0.5);
+      }
+      .references-label::before {
+        background: rgba(253, 250, 247, 0.3);
+      }
+
+      /* ─── FOOTER ───────────────────────────────────────────── */
+      footer {
+        padding: 3rem;
+        background: var(--text);
+        border-top: 1px solid rgba(253, 250, 247, 0.06);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer p {
+        font-size: 0.75rem;
+        color: rgba(253, 250, 247, 0.35);
+        letter-spacing: 0.05em;
+      }
+      .footer-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        color: rgba(253, 250, 247, 0.6);
+      }
+
+      /* ─── ANIMATIONS ───────────────────────────────────────── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes scrollLine {
+        0% {
+          top: -60px;
+        }
+        100% {
+          top: 60px;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ─── RESPONSIVE ───────────────────────────────────────── */
+      @media (max-width: 900px) {
+        nav {
+          padding: 1rem 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .container {
+          padding: 0 1.5rem;
+        }
+        .hero-content {
+          padding: 0 1.5rem;
+        }
+        .problem-grid,
+        .story-step,
+        .story-step.reverse,
+        .findings-grid,
+        .team-grid,
+        .vision-cards,
+        .method-steps,
+        .results-stats,
+        .ref-grid {
+          grid-template-columns: 1fr;
+        }
+        .story-step.reverse {
+          direction: ltr;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery-item.large {
+          grid-column: span 1;
+        }
+        footer {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">Qatar <span>Biotech Research</span></div>
+      <ul class="nav-links">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#story">Research Story</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#methodology">Methods</a></li>
+        <li><a href="#vision">Vision 2030</a></li>
+      </ul>
+      <a href="#results" class="nav-cta">View Results</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg-image"></div>
+      <div class="hero-overlay"></div>
+      <canvas id="particles"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          Qatar University · Environmental Science · (2025 - 2026)
+        </div>
+        <h1 class="hero-title">
+          A <em>Sustainable Biological</em><br />Solution for Plastic<br />Pollution
+          in Qatar
+        </h1>
+        <p class="hero-subtitle">
+          A screening study investigating indigenous bacteria from Qatar's
+          coastal beaches capable of interacting with polyethylene plastic waste
+          — a biological answer to an urgent environmental challenge.
+        </p>
+        <div class="hero-badges">
+          <span class="badge badge-maroon">Aligned with Qatar Vision 2030</span>
+          <span class="badge badge-outline">Bioremediation</span>
+          <!-- <span class="badge badge-ocean">Environmental Science</span> -->
+        </div>
+        <a href="#problem" class="hero-cta">Explore the Research</a>
+      </div>
+      <!-- <div class="hero-scroll-line">
+        <div class="scroll-anim"></div>
+        <span>Scroll to explore</span>
+      </div> -->
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem">
+      <div class="problem-bg"></div>
+      <div class="container" style="position: relative; z-index: 2">
+        <div class="problem-grid reveal">
+          <div class="problem-left">
+            <div class="section-label">The Challenge</div>
+            <h2 class="section-title">
+              Plastic is <em>overwhelming</em> our oceans
+            </h2>
+            <div class="stat-big" id="counter-300">300M</div>
+            <div class="stat-label">tons of plastic produced every year</div>
+            <p class="problem-desc">
+              Qatar's coastline faces mounting pressure from plastic and
+              microplastic contamination. Human activities and tourism have
+              accelerated pollution, while traditional remediation methods prove
+              insufficient against microscopic plastic particles. Local
+              biological solutions — adapted to Qatar's unique marine
+              environment — have been largely unexplored.
+            </p>
+          </div>
+          <div class="problem-right">
+            <div class="prob-card">
+              <div class="prob-card-num">01 / Problem</div>
+              <h4>Microplastic Accumulation</h4>
+              <p>
+                Increasing plastic and microplastic pollution along Doha's
+                coastline driven by human activities and regional tourism.
+              </p>
+            </div>
+            <div class="prob-card">
+              <div class="prob-card-num">02 / Gap</div>
+              <h4>Ineffective Traditional Methods</h4>
+              <p>
+                Conventional remediation approaches show limited efficiency in
+                removing microplastics from marine sediment and water.
+              </p>
+            </div>
+            <div class="prob-card">
+              <div class="prob-card-num">03 / Urgency</div>
+              <h4>Lack of Local Research</h4>
+              <p>
+                Critical absence of recent studies on locally-adapted biological
+                solutions tailored to Qatar's coastal ecosystem.
+              </p>
+            </div>
+            <div class="prob-card">
+              <div class="prob-card-num">04 / Vision</div>
+              <h4>Biological Innovation</h4>
+              <p>
+                Harnessing indigenous bacteria as a cost-effective, sustainable,
+                and environmentally aligned bioremediation strategy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story">
+      <div class="container">
+        <div class="story-intro reveal">
+          <div class="section-label" style="justify-content: center">
+            Research Journey
+          </div>
+          <h2 class="section-title" style="text-align: center">
+            From <em>Qatar's shores</em><br />to the laboratory
+          </h2>
+          <p>
+            A documentary-style account of student researchers from Qatar
+            University who set out to find nature's answer to plastic pollution
+            — and found it on their own coastline.
+          </p>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="story-step reveal">
+          <div class="story-step-img">
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.32%20PM%20(2).jpeg?csf=1&web=1&e=NerBSz"
+              alt="Beach sampling fieldwork, Qatar coast"
+            />
+            <div class="story-step-img-overlay">
+              <div class="story-step-tag">
+                Field Research · Qatar Coastline · (2025 - 2026)
+              </div>
+            </div>
+          </div>
+          <div class="story-step-text">
+            <div class="step-num">01</div>
+            <h3>Beach <em>Sampling</em></h3>
+            <p>
+              The journey began at Qatar's intertidal zones — where land meets
+              the Arabian Gulf. Researchers collected water and sediment samples
+              from multiple coastal sites, carefully labeling specimens for
+              laboratory processing. Each sample carried the potential for
+              discovery.
+            </p>
+            <div class="story-step-meta">
+              <span class="meta-tag">Qatar Coastline</span>
+              <span class="meta-tag">Hand Sampling</span>
+              <span class="meta-tag">Intertidal Zone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="story-step reverse reveal">
+          <div class="story-step-img">
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.35%20PM.jpeg?csf=1&web=1&e=AwOBK8"
+              alt="Student working in laboratory with pipette"
+            />
+            <div class="story-step-img-overlay">
+              <div class="story-step-tag">
+                Lab Isolation · Qatar University · Environmental Science Center
+              </div>
+            </div>
+          </div>
+          <div class="story-step-text">
+            <div class="step-num">02</div>
+            <h3>Bacterial <em>Isolation</em></h3>
+            <p>
+              Back in the lab, samples underwent enrichment using LB and MSM
+              (Mineral Salt Media) — a selective medium where plastic is the
+              sole carbon source. Through serial dilution and careful culturing
+              on agar plates, 12 distinct bacterial isolates were successfully
+              obtained.
+            </p>
+            <div class="story-step-meta">
+              <span class="meta-tag">MSM Media</span>
+              <span class="meta-tag">Serial Dilution</span>
+              <span class="meta-tag">12 Isolates</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="story-step reveal">
+          <div class="story-step-img">
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM%20(2).jpeg?csf=1&web=1&e=Q6cq7e"
+              alt="Bacterial colonies in petri dish - successful isolation"
+            />
+            <div class="story-step-img-overlay">
+              <div class="story-step-tag">
+                Successful Isolation · 125+ Colonies Identified
+              </div>
+            </div>
+          </div>
+          <div class="story-step-text">
+            <div class="step-num">03</div>
+            <h3>Colony <em>Growth &amp; CFU Analysis</em></h3>
+            <p>
+              The petri dishes revealed success. Bacterial colonies flourished,
+              with C1PP showing the highest growth in plastic-enriched media.
+              CFU (Colony Forming Unit) analysis quantified bacterial viability,
+              while Gram staining differentiated positive and negative strains
+              among the isolates.
+            </p>
+            <div class="story-step-meta">
+              <span class="meta-tag">CFU Analysis</span>
+              <span class="meta-tag">Gram Staining</span>
+              <span class="meta-tag">C1PP Dominant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="story-step reverse reveal">
+          <div class="story-step-img">
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.31%20PM.jpeg?csf=1&web=1&e=SS94ah"
+              alt="Scientists analyzing data and reviewing results"
+            />
+            <div class="story-step-img-overlay">
+              <div class="story-step-tag">
+                Data Analysis · SEM Imaging · MALDI-TOF MS Identification
+              </div>
+            </div>
+          </div>
+          <div class="story-step-text">
+            <div class="step-num">04</div>
+            <h3>SEM &amp; <em>MALDI-TOF</em> Analysis</h3>
+            <p>
+              Scanning Electron Microscopy revealed something remarkable —
+              bacterial attachment and biofilm-like structures on plastic
+              surfaces. Compared to untreated controls, the plastic samples
+              showed visible surface roughness, cracks, and structural changes.
+              MALDI-TOF MS confirmed the identities of the dominant genera.
+            </p>
+            <div class="story-step-meta">
+              <span class="meta-tag">SEM Imaging</span>
+              <span class="meta-tag">MALDI-TOF MS</span>
+              <span class="meta-tag">Biofilm Formation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div class="gallery-header reveal">
+          <div class="section-label" style="justify-content: center">
+            Research Documentation
+          </div>
+          <h2 class="section-title" style="text-align: center">
+            Moments from the <em>field &amp; lab</em>
+          </h2>
+          <p>
+            Authentic documentation of young Qatari scientists at work — from
+            Qatar's coastline to the university laboratory.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div
+            class="gallery-item large"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(1).jpeg?csf=1&web=1&e=8at3Zg')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(1).jpeg?csf=1&web=1&e=8at3Zg"
+              alt="Field sampling at Qatar coast with labeled water bottles"
+            />
+            <div class="gallery-caption">Field Sampling · Qatar Coastline</div>
+          </div>
+          <div
+            class="gallery-item"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM.jpeg?csf=1&web=1&e=BK7gD0')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM.jpeg?csf=1&web=1&e=BK7gD0"
+              alt="Student working in biosafety cabinet"
+            />
+            <div class="gallery-caption">Bacterial Isolation · Lab Work</div>
+          </div>
+          <!-- <div
+            class="gallery-item"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(3).jpeg?csf=1&web=1&e=lNdPhj')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(3).jpeg?csf=1&web=1&e=lNdPhj"
+              alt="Research team in laboratory"
+            />
+            <div class="gallery-caption">Research Team · Qatar University</div>
+          </div> -->
+          <div
+            class="gallery-item"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM%20(4).jpeg?csf=1&web=1&e=8uTxOQ')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM%20(4).jpeg?csf=1&web=1&e=8uTxOQ"
+              alt="Student with test tubes and petri dishes"
+            />
+            <div class="gallery-caption">Sample Processing · Lab</div>
+          </div>
+          <!-- <div
+            class="gallery-item large"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/Beach%20Sampling%2016x9%20Widescreen.png?csf=1&web=1&e=8J15ZJ')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/Beach%20Sampling%2016x9%20Widescreen.png?csf=1&web=1&e=8J15ZJ"
+              alt="Beach field research team"
+            />
+            <div class="gallery-caption">
+              Water & Sediment Sampling · Field Research
+            </div>
+          </div> -->
+          <div
+            class="gallery-item"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.31%20PM%20(2).jpeg?csf=1&web=1&e=OEoveq')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.31%20PM%20(2).jpeg?csf=1&web=1&e=OEoveq"
+              alt="Lab equipment - orbital shaker incubator"
+            />
+            <div class="gallery-caption">
+              Laboratory Equipment · Incubation Setup
+            </div>
+          </div>
+          <div
+            class="gallery-item"
+            onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM%20(3).jpeg?csf=1&web=1&e=b1HfdT')"
+          >
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.34%20PM%20(3).jpeg?csf=1&web=1&e=b1HfdT"
+              alt="Supervisor and students at biosafety cabinet"
+            />
+            <div class="gallery-caption">Mentorship · Supervisor Guidance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <span id="lightbox-close">✕ Close</span>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
+    <!-- RESULTS -->
+    <section id="results">
+      <div class="container">
+        <div class="results-header reveal">
+          <div class="section-label" style="justify-content: center">
+            Key Findings
+          </div>
+          <h2 class="section-title" style="text-align: center">
+            What the <em>data revealed</em>
+          </h2>
+          <p>
+            Quantitative and qualitative evidence supporting the bioremediation
+            potential of Qatar's indigenous coastal bacteria.
+          </p>
+        </div>
+        <div class="results-stats reveal">
+          <div class="result-stat">
+            <div class="stat-number">12</div>
+            <div class="stat-desc">
+              Distinct bacterial isolates from Qatar's coast
+            </div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-number">4</div>
+            <div class="stat-desc">
+              Dominant genera identified (Bacillus, Pseudomonas,
+              Stenotrophomonas, Exiguobacterium)
+            </div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-number">C1PP</div>
+            <div class="stat-desc">
+              Isolate with highest growth on plastic as sole carbon source
+            </div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-number">SEM</div>
+            <div class="stat-desc">
+              Imaging confirmed biofilm formation &amp; surface degradation of
+              plastics
+            </div>
+          </div>
+        </div>
+        <div class="findings-grid reveal">
+          <div class="finding">
+            <h4>Bacterial Diversity &amp; Gram Profiling</h4>
+            <p>
+              Both Gram-positive and Gram-negative bacterial strains were
+              identified among the 12 isolates, demonstrating the rich microbial
+              diversity present in Qatar's coastal sediments.
+            </p>
+            <ul>
+              <li>Bacillus spp. — Gram-positive, spore-forming</li>
+              <li>
+                Pseudomonas spp. — Gram-negative, high metabolic versatility
+              </li>
+              <li>Stenotrophomonas spp. — Gram-negative, plastic-associated</li>
+              <li>Exiguobacterium spp. — extremophile characteristics</li>
+            </ul>
+          </div>
+          <div class="finding">
+            <h4>SEM Surface Analysis</h4>
+            <p>
+              Scanning Electron Microscopy provided visual confirmation of
+              bacterial interaction with plastic surfaces — a critical milestone
+              for bioremediation validation.
+            </p>
+            <ul>
+              <li>Biofilm-like structures observed on PP surfaces</li>
+              <li>Surface roughness and microcracks on treated plastics</li>
+              <li>Visible contrast between control and treated samples</li>
+              <li>Bacterial attachment confirmed on both PP and PB plastics</li>
+            </ul>
+          </div>
+          <div class="finding">
+            <h4>MSM Growth Performance</h4>
+            <p>
+              In Mineral Salt Media containing plastic as the sole carbon
+              source, isolate C1PP demonstrated the strongest and most
+              consistent bacterial growth, indicating superior capacity to
+              utilize plastic compounds metabolically.
+            </p>
+          </div>
+          <div class="finding">
+            <h4>MALDI-TOF MS Identification</h4>
+            <p>
+              Mass Spectrometry-based protein fingerprinting (MALDI-TOF) was
+              used to conclusively identify the bacterial genera, providing
+              rigorous scientific validation of the isolates' taxonomic
+              classification beyond morphological observation alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="methodology">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Scientific Approach</div>
+          <h2 class="section-title">Research <em>methodology</em></h2>
+        </div>
+        <div class="method-steps reveal">
+          <div class="method-step">
+            <div class="method-step-num">01</div>
+            <h4>Field Sampling</h4>
+            <p>
+              Water and sediment samples collected from multiple Qatar coastal
+              sites — including intertidal zones known for plastic accumulation.
+            </p>
+          </div>
+          <div class="method-step">
+            <div class="method-step-num">02</div>
+            <h4>Bacterial Enrichment &amp; Isolation</h4>
+            <p>
+              LB broth and Mineral Salt Media (MSM) used for enrichment, with
+              polypropylene (PP) and biodegradable plastic bags (PB) as
+              substrates.
+            </p>
+          </div>
+          <div class="method-step">
+            <div class="method-step-num">03</div>
+            <h4>Serial Dilution &amp; Culturing</h4>
+            <p>
+              10-fold serial dilutions performed and plated on nutrient agar to
+              obtain pure, distinct bacterial colonies for analysis.
+            </p>
+          </div>
+          <div class="method-step">
+            <div class="method-step-num">04</div>
+            <h4>CFU Analysis</h4>
+            <p>
+              Colony Forming Unit counts quantified bacterial viability and
+              growth efficiency in plastic-enriched media across all isolates.
+            </p>
+          </div>
+          <div class="method-step">
+            <div class="method-step-num">05</div>
+            <h4>SEM Imaging</h4>
+            <p>
+              Scanning Electron Microscopy analyzed surface changes on plastic
+              particles post-bacterial treatment, revealing attachment and
+              structural degradation.
+            </p>
+          </div>
+          <div class="method-step">
+            <div class="method-step-num">06</div>
+            <h4>MALDI-TOF MS Identification</h4>
+            <p>
+              Matrix-Assisted Laser Desorption Ionization Time-of-Flight Mass
+              Spectrometry provided definitive taxonomic identification of key
+              isolates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION 2030 -->
+    <section id="vision">
+      <div class="container">
+        <div class="vision-header reveal">
+          <div class="section-label">National Alignment</div>
+          <h2 class="section-title">Qatar Vision <em>2030</em></h2>
+          <p>
+            This research directly supports Qatar's national sustainability
+            agenda — demonstrating how indigenous scientific innovation can
+            address environmental challenges through locally-grounded biological
+            solutions.
+          </p>
+        </div>
+
+        <div
+          class="vision-image reveal"
+          onclick="openLightbox('https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/Qatar%20Biotech%20Water_new.png?csf=1&web=1&e=r1RN51')"
+        >
+          <img
+            src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/Qatar%20Biotech%20Water_new.png?csf=1&web=1&e=r1RN51"
+            alt="Qatar Biotech Water Purification Concept"
+          />
+          <div class="vision-image-overlay">
+            <div class="vision-image-tag">
+              Visionary Concept · Biological Water Purification
+            </div>
+          </div>
+        </div>
+        <div class="vision-cards reveal">
+          <div class="vision-card">
+            <div class="vision-icon">🌿</div>
+            <h4>Environmental Sustainability</h4>
+            <p>
+              Developing biological pathways for plastic waste management that
+              reduce long-term environmental burden on Qatar's marine ecosystem.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="vision-icon">🔬</div>
+            <h4>Scientific Innovation</h4>
+            <p>
+              Building Qatar's research capacity through cutting-edge
+              biotechnology applied to urgent local environmental problems.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="vision-icon">🇶🇦</div>
+            <h4>Local Solutions</h4>
+            <p>
+              Indigenous bacteria adapted to Qatar's unique coastal conditions
+              offer superior bioremediation potential over imported or generic
+              strains.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="vision-icon">👩‍🔬</div>
+            <h4>Youth Empowerment</h4>
+            <p>
+              Student-led research at Qatar University demonstrates the nation's
+              commitment to empowering the next generation of environmental
+              scientists.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="vision-icon">♻️</div>
+            <h4>Sustainable Biotechnology</h4>
+            <p>
+              Bioremediation through bacteria represents a cost-effective,
+              scalable, and eco-compatible alternative to chemical or mechanical
+              remediation.
+            </p>
+          </div>
+          <div class="vision-card">
+            <div class="vision-icon">🌊</div>
+            <h4>Marine Conservation</h4>
+            <p>
+              Protecting Qatar's Arabian Gulf coastline — a critical ecological
+              and cultural resource — through proactive biological intervention.
+            </p>
+          </div>
+        </div>
+        <div class="vision-quote reveal">
+          <blockquote>
+            "This study confirmed the presence of local bacterial strains in
+            Qatar capable of surviving in plastic-rich environments and
+            interacting with plastic surfaces — highlighting a promising
+            sustainable approach for plastic pollution management in Qatar."
+          </blockquote>
+          <cite
+            >Research Conclusion — Anjoud Al Sulaiti &amp; Hssa Al Kuwari, Qatar
+            University (2025 - 2026)</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="container">
+        <div class="team-grid reveal">
+          <div class="team-image">
+            <img
+              src="https://qatareducation-my.sharepoint.com/:i:/r/personal/f_alsharoqi1812_education_qa/Documents/%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB%D9%8A%D8%A9/pictures/WhatsApp%20Image%202026-04-27%20at%202.56.33%20PM%20(3).jpeg?csf=1&web=1&e=lNdPhj"
+              alt="Research team: students and supervisor Dr. Eiatta at Qatar University lab"
+            />
+          </div>
+          <div class="team-content">
+            <div class="section-label">The Researchers</div>
+            <h2 class="section-title">Teamwork <em>drives discovery</em></h2>
+            <p>
+              This research was conducted by environmental science students at
+              Qatar University, working under the mentorship of experienced
+              faculty supervisors. The collaboration between young researchers
+              and established scientists reflects Qatar's investment in
+              scientific education and knowledge transfer.
+            </p>
+            <p>
+              Mentorship, collaboration, and innovation — building Qatar's
+              scientific future one experiment at a time.
+            </p>
+            <div class="team-names">
+              <div class="team-role">Research Students</div>
+              <div class="team-name">Anjoud Al Sulaiti · Hssa Al Kuwari</div>
+              <div class="team-divider"></div>
+              <div class="team-role">Supervisors</div>
+              <div class="team-name">
+                Dr. Khalid Bani-Melhem · Fatima Al Sharoqi
+              </div>
+              <div class="team-divider"></div>
+              <div class="team-role">Institution</div>
+              <div class="team-name">
+                Qatar University — Environmental Science Center
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE -->
+    <section id="future">
+      <div class="container">
+        <div class="future-content reveal">
+          <div class="section-label">Looking Forward</div>
+          <h2 class="section-title">
+            The <em>future</em> of bioremediation in Qatar
+          </h2>
+          <p>
+            The identification of plastic-interacting bacteria native to Qatar's
+            coastal ecosystem opens a new frontier in environmental
+            biotechnology. These isolates — particularly C1PP — represent
+            candidates for scaled bioreactor systems capable of treating plastic
+            waste collected from Qatar's beaches.
+          </p>
+          <p>
+            Future research will focus on enzymatic pathway characterization,
+            optimizing culture conditions for maximum plastic degradation, and
+            piloting field-scale bioremediation trials in collaboration with
+            Qatar's environmental authorities.
+          </p>
+          <p>
+            This is not just research — it is the foundation of a sustainable,
+            biological future for Qatar's marine environment, built by Qatari
+            scientists, for Qatar.
+          </p>
+          <a href="#vision" class="future-cta">Qatar Vision 2030 Alignment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="references">
+      <div class="container">
+        <div class="section-label references-label reveal">
+          Academic References
+        </div>
+        <div class="ref-grid reveal">
+          <div class="ref-item">
+            <span class="ref-num">01</span>
+            <a
+              href="https://doi.org/10.1016/j.marpolbul.2020.111162"
+              class="ref-link"
+              target="_blank"
+            >
+              Marine Pollution Bulletin — Plastic pollution in coastal
+              environments<br />doi.org/10.1016/j.marpolbul.2020.111162
+            </a>
+          </div>
+          <div class="ref-item">
+            <span class="ref-num">02</span>
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/31347311"
+              class="ref-link"
+              target="_blank"
+            >
+              PubMed — Bacterial plastic degradation studies<br />pubmed.ncbi.nlm.nih.gov/31347311
+            </a>
+          </div>
+          <div class="ref-item">
+            <span class="ref-num">03</span>
+            <a
+              href="https://www.npc.qa/en/QNV/pages/default.aspx"
+              class="ref-link"
+              target="_blank"
+            >
+              Qatar National Planning Council — Qatar National Vision 2030<br />npc.qa/en/QNV/pages/default.aspx
+            </a>
+          </div>
+          <div class="ref-item">
+            <span class="ref-num">04</span>
+            <a
+              href="https://doi.org/10.1016/j.jhazmat.2021.125114"
+              class="ref-link"
+              target="_blank"
+            >
+              Journal of Hazardous Materials — Bioremediation of
+              microplastics<br />doi.org/10.1016/j.jhazmat.2021.125114
+            </a>
+          </div>
+          <div class="ref-item">
+            <span class="ref-num">05</span>
+            <a
+              href="https://www.science.org/doi/10.1126/science.aad6359"
+              class="ref-link"
+              target="_blank"
+            >
+              Science — Plastic-degrading microorganisms in marine
+              environments<br />science.org/doi/10.1126/science.aad6359
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">Qatar Biotech Research · (2025 - 2026)</div>
+      <p>
+        Fatima Al Sharoqi · Anjoud Al Sulaiti · Hessa Al Kuwari · Qatar Technical Secondary School for Girls
+      </p>
+      <p>Aligned with Qatar National Vision 2030</p>
+    </footer>
+
+    <script>
+      // ─── THEMED ICON PARTICLES ──────────────────────────────
+      const canvas = document.getElementById("particles");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      // Draw functions for each icon type, centered at (0,0), scale ~1 = 14px unit
+      const iconDrawers = {
+        // Plastic fragment: irregular jagged polygon
+        plastic: (ctx, s) => {
+          ctx.beginPath();
+          const pts = [
+            [0, -s],
+            [s * 0.6, -s * 0.4],
+            [s * 0.9, s * 0.2],
+            [s * 0.3, s * 0.8],
+            [-s * 0.4, s * 0.7],
+            [-s * 0.9, s * 0.1],
+            [-s * 0.5, -s * 0.6],
+          ];
+          ctx.moveTo(pts[0][0], pts[0][1]);
+          for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+          ctx.closePath();
+          ctx.stroke();
+        },
+        // Bacteria cell: oval with flagellum line + two dots inside
+        bacteria: (ctx, s) => {
+          ctx.beginPath();
+          ctx.ellipse(0, 0, s * 0.9, s * 0.45, Math.PI / 5, 0, Math.PI * 2);
+          ctx.stroke();
+          // flagellum
+          ctx.beginPath();
+          ctx.moveTo(s * 0.85, 0);
+          ctx.bezierCurveTo(
+            s * 1.3,
+            -s * 0.5,
+            s * 1.6,
+            s * 0.3,
+            s * 1.9,
+            -s * 0.2,
+          );
+          ctx.stroke();
+          // inner dots
+          ctx.beginPath();
+          ctx.arc(-s * 0.3, 0, s * 0.12, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(s * 0.25, 0, s * 0.1, 0, Math.PI * 2);
+          ctx.fill();
+        },
+        // Water molecule: H2O — big O circle + two small H circles with bonds
+        water: (ctx, s) => {
+          // O
+          ctx.beginPath();
+          ctx.arc(0, 0, s * 0.38, 0, Math.PI * 2);
+          ctx.stroke();
+          // bond + H left
+          ctx.beginPath();
+          ctx.moveTo(-s * 0.38, 0);
+          ctx.lineTo(-s * 0.82, -s * 0.45);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(-s * 0.95, -s * 0.52, s * 0.2, 0, Math.PI * 2);
+          ctx.stroke();
+          // bond + H right
+          ctx.beginPath();
+          ctx.moveTo(s * 0.38, 0);
+          ctx.lineTo(s * 0.82, -s * 0.45);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(s * 0.95, -s * 0.52, s * 0.2, 0, Math.PI * 2);
+          ctx.stroke();
+        },
+        // Lab flask: Erlenmeyer outline
+        flask: (ctx, s) => {
+          ctx.beginPath();
+          // neck
+          ctx.moveTo(-s * 0.22, -s);
+          ctx.lineTo(-s * 0.22, -s * 0.25);
+          // widen to base
+          ctx.lineTo(-s * 0.9, s * 0.75);
+          ctx.quadraticCurveTo(0, s * 1.05, s * 0.9, s * 0.75);
+          ctx.lineTo(s * 0.22, -s * 0.25);
+          ctx.lineTo(s * 0.22, -s);
+          ctx.closePath();
+          ctx.stroke();
+          // stopper top
+          ctx.beginPath();
+          ctx.rect(-s * 0.35, -s * 1.1, s * 0.7, s * 0.18);
+          ctx.stroke();
+          // liquid fill line
+          ctx.beginPath();
+          ctx.moveTo(-s * 0.62, s * 0.35);
+          ctx.lineTo(s * 0.62, s * 0.35);
+          ctx.stroke();
+        },
+      };
+
+      const iconTypes = ["plastic", "bacteria", "water", "flask"];
+      // color per type: plastic=maroon, bacteria=ocean, water=ocean-light, flask=sand
+      const iconColors = {
+        plastic: "138,21,56",
+        bacteria: "61,122,138",
+        water: "111,179,196",
+        flask: "139,107,64",
+      };
+
+      function createParticle() {
+        const type = iconTypes[Math.floor(Math.random() * iconTypes.length)];
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 4 + 3, // 3–7 px unit
+          speedX: (Math.random() - 0.5) * 0.22,
+          speedY: (Math.random() - 0.5) * 0.18,
+          rotation: Math.random() * Math.PI * 2,
+          rotSpeed: (Math.random() - 0.5) * 0.004,
+          opacity: Math.random() * 0.13 + 0.04, // very faint: 0.04–0.17
+          type,
+        };
+      }
+
+      for (let i = 0; i < 48; i++) particles.push(createParticle());
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          p.rotation += p.rotSpeed;
+          if (p.x < -30) p.x = canvas.width + 30;
+          if (p.x > canvas.width + 30) p.x = -30;
+          if (p.y < -30) p.y = canvas.height + 30;
+          if (p.y > canvas.height + 30) p.y = -30;
+
+          const rgb = iconColors[p.type];
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rotation);
+          ctx.globalAlpha = p.opacity;
+          ctx.strokeStyle = `rgba(${rgb},1)`;
+          ctx.fillStyle = `rgba(${rgb},1)`;
+          ctx.lineWidth = 0.9;
+          iconDrawers[p.type](ctx, p.size);
+          ctx.restore();
+        });
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+
+      // ─── PARALLAX HERO BG ───────────────────────────────────
+      window.addEventListener("scroll", () => {
+        const bg = document.querySelector(".hero-bg-image");
+        if (bg)
+          bg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.15}px)`;
+      });
+
+      // ─── SCROLL REVEAL ──────────────────────────────────────
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 80);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // ─── LIGHTBOX ───────────────────────────────────────────
+      function openLightbox(src) {
+        const lb = document.getElementById("lightbox");
+        document.getElementById("lightbox-img").src = src;
+        lb.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("active");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+    </script>
+  </body>
+</html>
